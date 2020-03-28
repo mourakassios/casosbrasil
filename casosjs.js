@@ -1,5 +1,4 @@
-
-	var casos = document.getElementById('ncasos')
+    var casos = document.getElementById('ncasos')
 	var confirmeds = 0
 	var mortesdiv = document.getElementById('nobtos')
 	var mortes = 0
