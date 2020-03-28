@@ -9,25 +9,26 @@
 
 </head>
 <body>
-	<div>
+<div class="bg-image">
+	<div class="lines">
 		<div id="cabecalho"><a href="file:///C:/Users/Kassio/Dropbox/Projeto%20Parques/casoshome.html"><img src="bandeirabr.jpg" width="82" height="86" ></a> Casos Brasil</div>
 	</div>
-			<p><b>B</b>em vindos ao Casos Brasil, aqui você fica informado do que acontece<br> no país com relação aos casos confirmados do Coronavirus (Covid 19).<br><br><br><br></p>
-
-
+			<br>
+			<div id="post"><b>B</b>em vindos ao Casos Brasil, aqui você fica informado do que acontece<br> no país com relação aos casos confirmados do Coronavirus (Covid 19).</div>
+			<br><br>
 			<h2><b>N</b>úmero de casos confirmados: </h2>
 			<h3 id="ncasos">  </h3><br>
 
 			<h2><b>N</b>úmero de óbitos: </h2>
 			<h3 id="nobtos">  </h3><br><br><br><br>
 	
-	<div>
+	<div class="lines">
 		<div id="noticias"><b>P</b>rincipais notícias!</div>
 	</div>
 	<p><a href="https://www.saude.gov.br/noticias">Acompanhe aqui os comunicados do Ministério da Saúde.</a> </p><br><br>
 				
-<p>Este site será atualizado diariamente a respeito do vírus no Brasil.</p>
-
+	<p>Este site será atualizado diariamente a respeito do vírus no Brasil.</p>
+</div>
 <script>
 	var casos = document.getElementById('ncasos')
 	var confirmeds = 0
@@ -61,8 +62,8 @@
 		}*/
 		console.log(data.countries_stat[16])
 		brazil = data.countries_stat[16]
-		casos.innerText = brazil.cases
-		mortesdiv.innerText = brazil.deaths
+		casos.innerText = brazil.cases.replace(",", ".")
+		mortesdiv.innerText = brazil.deaths.replace(",", ".")
 		
 	})
 	.catch(err => {

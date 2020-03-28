@@ -1,4 +1,8 @@
-div{	
+body{
+	text-align: center;
+}
+
+.lines{	
 	border-top: 10px solid green;
 	border-bottom: 10px solid yellow;
 	text-align: center;
