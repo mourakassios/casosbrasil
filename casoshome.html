@@ -19,11 +19,11 @@
 
 
 			<h2><b>N</b>úmero de casos confirmados: </h2>
-				<h3> 1.891 </h3><br>
+				<h3 id="ncasos">  </h3><br>
 
 			
 			<h2><b>N</b>úmero de óbitos: </h2>
-				<h3> 34 </h3><br><br><br><br>
+				<h3 id="nobtos">  </h3><br><br><br><br>
 			
 
 	
@@ -35,12 +35,18 @@
 <p>Este site será atualizado pela mannhã; a tarde e a noite, enquanto os eventos estiverem ocorrendo no Brasil.</p>
 
 <script>
+	var casos = Document.getElementById('ncasos')
 	fetch("https://pomber.github.io/covid19/timeseries.json")
 	.then(response => response.json())
 	.then(data => {
-    data["Argentina"].forEach(({ date, confirmed, recovered, deaths }) =>
+    data["Brazil"].forEach(({ date, confirmed, recovered, deaths }) =>
       console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
+    	
+   		
     )
+ 
+	casos.innerText = confirmed - recovered - deaths
+
   })
 </script>
 
