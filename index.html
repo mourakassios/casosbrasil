@@ -5,8 +5,6 @@
 	<link rel="icon" href="favicon.ico">
 	<meta charset="utf-8">
 	<link href="casoscss.css" rel="stylesheet">
-
-
 </head>
 <div class="background-image"></div>
 <body>
@@ -35,16 +33,6 @@
 	var confirmeds = 0
 	var mortesdiv = document.getElementById('nobtos')
 	var mortes = 0
-	/*fetch("https://pomber.github.io/covid19/timeseries.json")
-	.then(response => response.json())
-	.then(data => {
-	data["Brazil"].forEach(({ date, confirmed, recovered, deaths }) =>{
-	confirmeds = (`${confirmed - recovered - deaths}`),
-	mortes = (`${deaths}`)
-	})
-	casos.innerText = confirmeds
-	mortesdiv.innerText = mortes
-	})*/
 	var conteudo
 	var brazil
 	fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_country.php", {
@@ -69,6 +57,17 @@
 	})
 	.catch(err => {
 		console.log(err);
+		// caso dê erro, utilizar a outra API
+		fetch("https://pomber.github.io/covid19/timeseries.json")
+		.then(response => response.json())
+		.then(data => {
+		data["Brazil"].forEach(({ date, confirmed, recovered, deaths }) =>{
+		confirmeds = (`${confirmed - recovered - deaths}`),
+		mortes = (`${deaths}`)
+		})
+		casos.innerText = confirmeds
+		mortesdiv.innerText = mortes
+		})
 	});
 </script>
 
