@@ -3,7 +3,6 @@
 <head>
 	<title>Casos Brasil</title>
 	<meta charset="utf-8">
-	<script type="text/javascript" src="casosjs.js"></script>
 	<link href="casoscss.css" rel="stylesheet">
 
 
@@ -39,7 +38,7 @@
 	var confirmeds = 0
 	var mortesdiv = document.getElementById('nobtos')
 	var mortes = 0
-	fetch("https://pomber.github.io/covid19/timeseries.json")
+	/*fetch("https://pomber.github.io/covid19/timeseries.json")
 	.then(response => response.json())
 	.then(data => {
 	data["Brazil"].forEach(({ date, confirmed, recovered, deaths }) =>{
@@ -48,7 +47,32 @@
 	})
 	casos.innerText = confirmeds
 	mortesdiv.innerText = mortes
-})
+	})*/
+	var conteudo
+	var brazil
+	fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_country.php", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com",
+		"x-rapidapi-key": "b51f211d9bmsh1a357619e98d1f9p1f82d1jsnfaae7a3aa1aa"
+	}
+	})
+	.then(response => response.json()).then(data =>{
+		conteudo = data
+		/*for(var key in conteudo.countries_stat) {
+			if(conteudo.countries_stat[key].country_name == 'Brazil') {
+				brazil = conteudo.countries_stat[key]
+			}
+		}*/
+		console.log(data.countries_stat[16])
+		brazil = data.countries_stat[16]
+		casos.innerText = brazil.cases
+		mortesdiv.innerText = brazil.deaths
+		
+	})
+	.catch(err => {
+		console.log(err);
+	});
 </script>
 
 </body>
