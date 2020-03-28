@@ -1,0 +1,57 @@
+h1{
+	font-family: Verdana, Arial, Sans-serif;
+	font-size:500%;
+	color:blue;
+	margin-bottom:0;
+	padding-left: 20px;
+	border-top: 7px solid green;
+	border-bottom: 30px solid yellow;
+	text-align: center;
+
+	
+}
+
+
+h2{
+	font-family: Verdana, Arial, Sans-serif;
+	font-size:170%;
+	color:blue;
+	margin-bottom:0;
+	padding-left: 20px;
+	text-align: center;
+
+}
+
+
+
+h3{
+	font-family: Verdana, Arial, Sans-serif;
+	font-size:170%;
+	color:black;
+	margin-bottom:0;
+	padding-left: 20px;
+	text-align: center;
+
+
+}
+
+
+h4{
+	font-family: Verdana, Arial, Sans-serif;
+	font-size:300%;
+	color:blue;
+	margin-bottom:0;
+	padding-left: 20px;
+	border-top: 7px solid green;
+	border-bottom: 10px solid yellow;
+	text-align: center;
+}
+
+
+
+p{
+	font-family: Verdana, Arial, Sans-serif;
+	padding-left: 21px;
+	text-align: center;
+}
+
