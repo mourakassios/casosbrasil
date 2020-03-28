@@ -1,4 +1,4 @@
-<script>
+
 	var casos = document.getElementById('ncasos')
 	var confirmeds = 0
 	var mortesdiv = document.getElementById('nobtos')
@@ -13,4 +13,3 @@
 	casos.innerText = confirmeds
 	mortesdiv.innerText = mortes
   })
-</script>
