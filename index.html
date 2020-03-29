@@ -49,14 +49,15 @@
 				brazil = conteudo.countries_stat[key]
 			}
 		}
-		console.log(data.brazil)
+		console.log(brazil)
 		//brazil = data.countries_stat[16]
 		casos.innerText = brazil.cases.replace(",", ".")
 		mortesdiv.innerText = brazil.deaths.replace(",", ".")
 		
 	})
 	.catch(err => {
-		console.log(err);
+		console.log(err)
+		console.log("Switched API");
 		// caso dê erro, utilizar a outra API
 		fetch("https://pomber.github.io/covid19/timeseries.json")
 		.then(response => response.json())
