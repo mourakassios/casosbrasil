@@ -82,7 +82,25 @@
 		})
 	});
 
-
+//---BUSCAR CASOS NO MUNDO:----------------------------------------------------------------------------------------------
+	var casosMundo
+	var mortesMundo
+	var conteudoMundo
+	fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/worldstat.php", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com",
+		"x-rapidapi-key": "b51f211d9bmsh1a357619e98d1f9p1f82d1jsnfaae7a3aa1aa"
+	}
+	})
+	.then(response => response.json()).then(data =>{
+		conteudoMundo = data
+		casosMundo = conteudoMundo .total_cases
+		mortesMundo = conteudoMundo.total_deaths
+		console.log(casosMundo)//colocar o innertext de alguma div pra receber os numeros.replace(virgula,ponto)
+		console.log(mortesMundo)//colocar o innertext de alguma div pra receber os numeros.replace(virgula,ponto)
+	})
+	
 
 	
 </script>
