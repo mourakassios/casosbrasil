@@ -42,8 +42,7 @@
 		conteudoMundo = data
 		casosMundo = conteudoMundo .total_cases
 		mortesMundo = conteudoMundo.total_deaths
-		console.log("Mundial cases:",casosMundo)//colocar o innertext de alguma div pra receber os numeros.replace(virgula,ponto)
-		console.log("Mundial deaths:",mortesMundo)//colocar o innertext de alguma div pra receber os numeros.replace(virgula,ponto)
+		console.log(conteudoMundo)
 		mundiCasosDiv.innerHTML = casosMundo.replace(",", ".")
 		mundiMortesDiv.innerHTML = mortesMundo.replace(",", ".")
 	})
