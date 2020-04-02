@@ -8,6 +8,12 @@ body{
 	text-align: center;
 }
 
+.lines2{	
+	border-top: 10px solid rgb(21, 84, 179);
+	border-bottom: 10px solid rgb(255, 0, 140);
+	text-align: center;
+}
+
 #cabecalho{
 	
 	font-size:500%;
@@ -35,6 +41,15 @@ h3{
 	padding-left: 20px;
 	text-align: center;
 }
+h4{
+	
+	font-size:170%;
+	color:black;
+	margin-bottom: -20px;
+	padding-left: 20px;
+	text-align: center;
+}
+
 
 
 #noticias{
@@ -55,4 +70,6 @@ p{
 	padding-left: 21px;
 	text-align: center;
 }
-
+button{
+	border-radius: 5px;
+}

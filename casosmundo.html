@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Casos Mundo</title>
+	<link rel="icon" href="favicon.ico">
+	<meta charset="utf-8">
+	<link href="casoscss.css" rel="stylesheet">
+</head>
+<body>
+<div class="bg-image">
+	<div class="lines2">
+    </div>
+        <br>
+        <div id="post"><b>B</b>em vindos ao Casos Mundo, aqui você fica informado do que acontece<br> no mundo com relação aos casos confirmados do Coronavirus (Covid 19).</div>
+        <br><br>
+    
+			<h2>Casos no mundo:</h2>
+			<h3 id="mundialCasos"> Carregando... </h3><br>
+
+			<h2>Mortes no mundo:</h2>
+			<h3 id="mundialMortes"> Carregando... </h3><br>
+				
+	<p>Este site será atualizado automaticamente a respeito do vírus no Mundo. </p>
+    </div>
+    <div class="lines2"></div>
+<script>
+	var casosMundo
+	var mortesMundo
+	var conteudoMundo
+	var mundiCasosDiv = document.getElementById('mundialCasos')
+	var mundiMortesDiv = document.getElementById('mundialMortes')
+	fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/worldstat.php", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com",
+		"x-rapidapi-key": "b51f211d9bmsh1a357619e98d1f9p1f82d1jsnfaae7a3aa1aa"
+	}
+	})
+	.then(response => response.json()).then(data =>{
+		conteudoMundo = data
+		casosMundo = conteudoMundo .total_cases
+		mortesMundo = conteudoMundo.total_deaths
+		console.log("Mundial cases:",casosMundo)//colocar o innertext de alguma div pra receber os numeros.replace(virgula,ponto)
+		console.log("Mundial deaths:",mortesMundo)//colocar o innertext de alguma div pra receber os numeros.replace(virgula,ponto)
+		mundiCasosDiv.innerHTML = casosMundo.replace(",", ".")
+		mundiMortesDiv.innerHTML = mortesMundo.replace(",", ".")
+	})
+</script>
+
+</body>
+</html>
