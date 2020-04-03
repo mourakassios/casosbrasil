@@ -14,11 +14,14 @@
         <div id="post"><b>B</b>em vindos ao Casos Mundo, aqui você fica informado do que acontece<br> no mundo com relação aos casos confirmados do Coronavirus (Covid 19).</div>
         <br><br>
     
-			<h2>Casos no mundo:</h2>
+			<h2>Casos no mundo todo:</h2>
 			<h3 id="mundialCasos"> Carregando... </h3><br>
 
-			<h2>Mortes no mundo:</h2>
+			<h2>Mortes no mundo todo:</h2>
 			<h3 id="mundialMortes"> Carregando... </h3>
+
+			<h2>Pessoas recuperadas no mundo todo:</h2>
+			<h3 id="mundialRecovered"> Carregando... </h3>
 			
 			<h3>Para mais detalhes, acesse essa página:</h3>
 			<a target="blank" href="https://bing.com/covid"><button>Bing-Covid</button></a>
@@ -26,11 +29,12 @@
     </div>
     <div class="lines2"></div>
 <script>
-	var casosMundo
-	var mortesMundo
-	var conteudoMundo
+	//var casosMundo
+	//var mortesMundo
+	//var conteudoMundo
 	var mundiCasosDiv = document.getElementById('mundialCasos')
 	var mundiMortesDiv = document.getElementById('mundialMortes')
+	var mundiRecoveredDiv = document.getElementById('mundialRecovered')
 	fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/worldstat.php", {
 	"method": "GET",
 	"headers": {
@@ -39,12 +43,14 @@
 	}
 	})
 	.then(response => response.json()).then(data =>{
-		conteudoMundo = data
-		casosMundo = conteudoMundo .total_cases
-		mortesMundo = conteudoMundo.total_deaths
+		let conteudoMundo = data
+		let casosMundo = conteudoMundo .total_cases
+		let mortesMundo = conteudoMundo.total_deaths
+		let recoveredMundo = conteudoMundo.total_recovered
 		console.log(conteudoMundo)
 		mundiCasosDiv.innerHTML = casosMundo.replace(",", ".")
 		mundiMortesDiv.innerHTML = mortesMundo.replace(",", ".")
+		mundiRecoveredDiv.innerHTML = recoveredMundo.replace(",", ".")
 	})
 </script>
 

@@ -31,6 +31,9 @@
 
 			<h2><b>N</b>úmero de óbitos: </h2>
 			<h3 id="nobtos"> Carregando... </h3>
+
+			<h2>Pessoas recuperadas:</h2>
+			<h3 id="nrecovered"> Carregando... </h3>
 	
 	<h4>Deseja ver a quantidade de casos no mundo?</h4>
 	<a target="blank" href="casosmundo.html"><h2><button>Casos no Mundo</button></h2></a>
@@ -45,6 +48,8 @@
 	var mortes = 0
 	var conteudo
 	var brazil
+	var recuperados = document.getElementById('nrecovered')
+
 	fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_country.php", {
 	"method": "GET",
 	"headers": {
@@ -63,6 +68,8 @@
 		//brazil = data.countries_stat[16]
 		casos.innerText = brazil.cases.replace(",", ".")
 		mortesdiv.innerText = brazil.deaths.replace(",", ".")
+		recuperados.innerText = brazil.total_recovered.replace(",",".")
+
 		
 	})
 	.catch(err => {
